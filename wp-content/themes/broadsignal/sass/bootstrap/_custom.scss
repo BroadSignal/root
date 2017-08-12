@@ -38,332 +38,40 @@ h1   { font-size: 24px; font-size: 2.4rem; } /* =24px */
 /*	----------------------------------------------------------------
   Header
  -------------------------------------------------------------  */
-
-.header-top{
-  background: #e5e5e5;
-  padding: 7px 0;
-  ul.time{
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    li{
-      float: left;
-      margin-right: 20px;
-      list-style: none;
-      i{
-        margin-right: 10px;
-      }
-    }
-  }
-  ul.top-menu{
-    padding: 0;
-    margin:0;
-    float: right;
-    overflow: hidden;;
-    li{
-      margin-left: 10px;
-      list-style: none;
-      float: left;
-      a{
-        color:#000;
-        text-transform: uppercase;
-      }
-    }
-  }
-  @media only screen and (max-width : 992px) {
-    ul.time{
-      li{
-        margin-right:10px;
-      }
-    }
-  }
-  @media only screen and (max-width : 768px) {
-    ul.top-menu{
-      float: none;
-    }
-  }
-}
-#header{}
-.breakingnews-section{
-  margin-bottom: 20px;
-}
-.breaknews{
-  border:1px solid #dfdfdf;
-  .break-title{
-    float:left;
-    padding:5px 20px 5px 10px;
-    background: #bb0000;
-    margin-right: 10px;}
-  .break-content{
-    padding:5px;
-  }
-}
-.navbar{
-  padding: 0 !important;
-  margin-bottom: 0;
-}
-
-
-
-
-
-/*	----------------------------------------------------------------
-  Content
- -------------------------------------------------------------  */
-.news-style-1{
-  clear: both;
-  margin-bottom: 30px;
-  .title-section{
-    overflow: hidden;
-    clear: both;
-    border: 1px solid #d6d6d6;
-    padding:7px 20px;
-    h2{
-      float: left;
-      font-size: $font-size-h3;
-      margin: 0;
-    }
-    span{
-      float: right;
-      font-size: $font-size-h3;
-    }
-  }
-  .content-section{
-    border-left: 1px solid #d6d6d6;
-    border-right: 1px solid #d6d6d6;
-    border-bottom: 1px solid #d6d6d6;
-    padding: 20px 20px 0px 20px;
-    article{
-      overflow: hidden;
-      clear: both;
-      margin-bottom: 20px;
-      .img-section{
-        float: left;
-        width: 300px;
-        margin-right:  20px;
-      }
-      .content-right{
-        h3{
-          margin-top: 0;
-        }
-      }
-      @media only screen and (max-width : 768px) {
-        .img-section{
-          width: 260px;
-        }
-      }
-      @media only screen and (max-width : 480px) {
-        .img-section{
-          width: 200px;
-        }
-      }
-
-    }
-  }
-}
-.adsense{
- overflow: hidden;
- clear: both;
- margin-bottom:  30px;
-}
-.news-style-2{
-  clear: both;
-  margin-bottom: 30px;
-  .title-section{
-    overflow: hidden;
-    clear: both;
-    border: 1px solid #d6d6d6;
-    padding:7px 20px;
-    h2{
-      float: left;
-      font-size: $font-size-h3;
-      margin: 0;
-    }
-    span{
-      float: right;
-      font-size: $font-size-h3;
-    }
-  }
-  .content-section{
-    .first-post{
-      padding: 20px;
-      border-left: 1px solid #d6d6d6;
-      border-right: 1px solid #d6d6d6;
-
-      h3{
-        font-size: $font-size-h3;
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-      article.post{
-        overflow: hidden;
-        .header-entry{
-          overflow: hidden;
-          margin-bottom: 20px;
-        }
-        .img-section{
-          float:left;
-          width: 300px;
-          margin-right: 20px;
-        }
-        .content-right{
-          h3{
-            margin-top: 0;
-            font-size: $font-size-h3;
-          }
-          p{
-          margin-bottom: 0;}
-        }
-      }
-    }
-    .col-wrap{
-      overflow: hidden;
-      border: 1px solid #d6d6d6;
-      article{
-        width: 50%;
-        float: left;
-        padding: 15px;
-        border-top: 1px solid #d6d6d6;
-        &:nth-child(1){
-          border:0;
-        }
-        &:nth-child(2){
-          border: 0;
-        }
-        &:nth-child(odd){
-          border-right: 1px solid #d6d6d6;
-          margin-right: -1px;
-        }
-        .image-section{
-          float:left;
-          width: 150px;
-          overflow: hidden;
-          margin-right: 15px;
-        }
-        .content-right{
-          h3{
-            margin-top: 0;
-            font-size: $font-size-h4;
-          }
-          span{
-            font-size: $font-size-h6;
-          }
-          p{
-            margin-bottom: 0;
-          }
-        }
-      }
-    }
-  }
-}
-
-.post-cat-column{
-  border: 1px solid #d6d6d6;
-  padding: 20px;
-  overflow: hidden;
-  margin-bottom: 30px;
-  .category-title{
-    margin-bottom: 20px;
-    h2{
-      margin: 0;
-    }
-  }
-}
-.post-recent-content-first{
-  article{
-    figure{
-      margin-bottom: 20px;
-    }
-    .post-cat-content{
-      h3{
-        margin-top: 0;
-      }
-      ul.post_meta_box{
-        list-style: none;
-        clear: both;
-        margin-bottom: 10px;
-        padding-left:0;
-        overflow: hidden;
-        li{
-          float: left;
-          margin-right: 10px;
-          i{
-            margin-right: 5px;
-            color: #4f556d;
-          }
-        }
-
-      }
-      p{
-        clear: both;
-        margin-bottom: 20px;
-      }
-    }
-  }
-}
-
-
-
-
-
-.post-recent-content-second{
-  article{
-    overflow: hidden;
-    clear: both;
-    margin-top: 20px;
-    &:first-child{ margin-top: 0;}
-    figure{
-      margin-bottom: 0px;
-      float: left;
-      width: 150px;
-      margin-right: 10px;
-    }
-    .content-right{
-
-      h3{
-        margin-top: 0;
-        font-size: 14px;
-      }
-      ul.post_meta_box{
-        list-style: none;
-
-        margin-bottom: 10px;
-        padding-left:0;
-        overflow: hidden;
-        li{
-          float: left;
-          margin-right: 15px;
-          a{
-            i{
-              margin-right: 5px;
-              color: #4f556d;
-            }
-          }
-        }
-
-      }
-      p{
-        clear: both;
-        margin-bottom: 20px;
-      }
-    }
-  }
-}
-
-
-
-
-
-
-
-
-/*	----------------------------------------------------------------
-  Footer
- -------------------------------------------------------------  */
-
-
- .footer{
-   background: #2a3046;
-   padding: 40px 0;
-   color: #fff;
+ .navbar-default{
+   border: 0 !important;
  }
+ .navbar-brand{
+   width: 210px;
+ }
+ .navbar-nav > li{
+   text-transform: uppercase;
+   font-weight: 600;
+   font-size: 16px;
+ }
+
+
+ /*	----------------------------------------------------------------
+   Footer
+  -------------------------------------------------------------  */
+  .footer{
+    .footer-top{
+      background: #c6c6c6;
+    }
+    .menu{
+      float: right;
+      li{
+        float: left;
+        list-style: none;
+        margin-right: 10px;
+        a{
+          font-size: 14px;
+          color: #889098;
+        }
+      }
+    }
+    .footer-bottom{
+      background: #ebebeb;
+      padding: 25px 0;
+    }
+  }

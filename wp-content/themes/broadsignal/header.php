@@ -22,28 +22,8 @@
 <body <?php body_class(); ?>>
 
 
-	<div class="header-top">
-       <div class="container"><div class="row">
-         <div class="col-sm-6">
-           <ul class="time">
 
-             <li><i class="fa fa-calendar"></i><span>22. May 2017</span> </li>
-             <li><i class="fa fa-clock-o"></i><span>13:37:30</span> </li>
-             <li><i class="fa fa-location-arrow"></i><span>Kathmandu</span> </li>
-           </ul>
-         </div>
-         <div class="col-sm-6">
-
-           <ul class="top-menu">
-             <li> <a href="#">home</a></li>
-             <li><a href="#">about</a></li>
-             <li> <a href="#">sitemap</a></li>
-             <li> <a href="#">contact</a> </li>
-           </ul>
-         </div>
-       </div></div>
-     </div>
-
+<!--
 		     <header id="header">
 		       <div class="container"><div class="row">
 		         <div class="col-sm-3">
@@ -55,7 +35,7 @@
 		           </div>
 		         </div></div>
 		       </div>
-		     </header>
+		     </header>-->
 
 
 				 <nav class="navbar navbar-default " role="navigation">
@@ -64,20 +44,21 @@
 				 		<div class="row">
 				 			<div class="col-md-12">
 				 						<div class="navbar-header">
+
 				 								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 				 									<span class="icon-bar"></span>
 				 									<span class="icon-bar"></span>
 				 									<span class="icon-bar"></span>
 				 					</button>
 
-				 								<!--<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"  class="navbar-brand"><?php bloginfo( 'name' ); ?></a>-->
+				 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"  class="navbar-brand"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo.png" class="img-responsive"></a>
 
 				 						</div>
 
 				 				<?php
 				 				$args = array('theme_location' => 'primary',
 				 								'container_class' => 'collapse navbar-collapse',
-				 								'menu_class' => 'nav navbar-nav',
+				 								'menu_class' => 'nav navbar-nav  pull-right',
 				 								'fallback_cb' => '',
 				 														'menu_id' => 'main-menu',
 				 														'walker' => new Upbootwp_Walker_Nav_Menu());
