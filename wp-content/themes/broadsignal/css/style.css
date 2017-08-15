@@ -66,6 +66,8 @@ h1 {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 16px; }
+  .navbar-nav > li a:last-child {
+    padding-right: 0; }
 
 .navbar-default .navbar-toggle {
   border-color: #333; }
@@ -84,10 +86,10 @@ h1 {
     background: none; }
     #intro-section .kc-call-to-action .content-icon {
       display: none; }
-    #intro-section .kc-call-to-action .content-title {
+    #intro-section .kc-call-to-action .kc-cta-desc h2 {
       font-size: 32px;
       text-transform: uppercase; }
-    #intro-section .kc-call-to-action .content-desc {
+    #intro-section .kc-call-to-action .kc-cta-desc .kc-cta-text {
       font-size: 24px; }
 
 /*	----------------------------------------------------------------
@@ -152,26 +154,80 @@ h1 {
     text-transform: uppercase;
     height: 42px; }
 
+#video-section .kc-container {
+  padding-left: 6px;
+  padding-right: 6px; }
+
+#video-section .iframe {
+  width: 100%;
+  height: auto; }
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden; }
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.video-container iframe .ytp-chrome-top,
+.video-container iframe .ytp-pause-overlay ytp-scroll-min {
+  display: none !important; }
+
 /*	----------------------------------------------------------------
   Footer
  -------------------------------------------------------------  */
-.footer .footer-top {
-  background: #c6c6c6; }
-.footer .site-info {
-  font-size: 14px;
-  color: #889098; }
-.footer .menu {
-  float: right; }
-  .footer .menu li {
-    float: left;
-    list-style: none;
-    margin-right: 10px; }
-    .footer .menu li a {
-      font-size: 14px;
-      color: #889098; }
-.footer .footer-bottom {
-  background: #ebebeb;
-  padding: 25px 0; }
+.footer {
+  overflow: hidden;
+  clear: both; }
+  .footer .footer-top {
+    background: #ebebeb;
+    padding: 30px 0; }
+    .footer .footer-top .footer-logo {
+      width: 149px; }
+    .footer .footer-top .footer-contact {
+      padding-top: 27px; }
+      .footer .footer-top .footer-contact ul {
+        float: right;
+        padding: 0; }
+        .footer .footer-top .footer-contact ul li {
+          display: block;
+          clear: both;
+          color: #515769; }
+          .footer .footer-top .footer-contact ul li i {
+            font-family: 'simple-line-icons';
+            font-size: 20px;
+            color: #515769;
+            margin-right: 10px; }
+          .footer .footer-top .footer-contact ul li a {
+            color: #515769; }
+  .footer .site-info {
+    font-size: 14px;
+    /*color: #889098;*/
+    color: #515769; }
+  .footer .menu {
+    float: right; }
+    .footer .menu li {
+      float: left;
+      list-style: none;
+      margin-right: 10px; }
+      .footer .menu li a {
+        font-size: 14px;
+        /*color: #889098;*/
+        color: #515769; }
+      .footer .menu li:last-child {
+        margin: 0; }
+  .footer .footer-bottom {
+    background: #dedddd;
+    padding: 15px 0 10px; }
 
 img {
   max-width: 100%;

@@ -13,21 +13,21 @@
     <div class="footer-top">
 <div id="colophon"  class="container" role="contentinfo">
   <div class="row">
+    <div class="col-md-3">
+      <div class="footer-logo">
+      <img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo2.png" class="img-responsive"></div></div>
+
+<!--
 		<?php if ( is_active_sidebar( 'footer1' ) ) : ?>
 		    <div class="col-md-4">
 						<?php dynamic_sidebar( 'footer1' ); ?>
 					</div>
-		  <?php endif; ?>
-		  <?php if ( is_active_sidebar( 'footer2' ) ) : ?>
-		    <div class="col-md-4">
-						<?php dynamic_sidebar( 'footer2' ); ?>
-					</div>
-		  <?php endif; ?>
-		  <?php if ( is_active_sidebar( 'footer3' ) ) : ?>
-		    <div class="col-md-4">
-						<?php dynamic_sidebar( 'footer3' ); ?>
-					</div>
-		  <?php endif; ?>
+		  <?php endif; ?>-->
+      <?php if ( is_active_sidebar( 'footer2' ) ) : ?>
+          <div class="col-md-4 pull-right">
+              <?php dynamic_sidebar( 'footer2' ); ?>
+            </div>
+        <?php endif; ?>
   </div>
 
 </div>

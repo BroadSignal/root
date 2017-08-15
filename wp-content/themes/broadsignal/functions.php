@@ -63,7 +63,7 @@ function upbootwp_widgets_init() {
 		'after_title'   => '</h4>',
 	));
 	register_sidebar(array(
-		'name'          => __('Footer widget 1','upbootwp'),
+		'name'          => __('Footer Logo','upbootwp'),
 		'id'            => 'footer1',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
@@ -71,16 +71,8 @@ function upbootwp_widgets_init() {
 		'after_title'   => '</h3>',
 	));
 	register_sidebar(array(
-		'name'          => __('Footer widget 2','upbootwp'),
+		'name'          => __('Footer Contact','upbootwp'),
 		'id'            => 'footer2',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	));
-	register_sidebar(array(
-		'name'          => __('Footer widget 3','upbootwp'),
-		'id'            => 'footer3',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title">',
