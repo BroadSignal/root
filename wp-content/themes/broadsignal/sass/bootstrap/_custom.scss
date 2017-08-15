@@ -60,7 +60,7 @@ h1   { font-size: 24px; font-size: 2.4rem; } /* =24px */
    text-transform: uppercase;
    font-weight: 600;
    font-size: 16px;
-   a:last-child{
+   &:last-child a{
      padding-right:0;
    }
  }
@@ -80,6 +80,7 @@ h1   { font-size: 24px; font-size: 2.4rem; } /* =24px */
       text-align: center;
       /*padding: 220px 0;*/
       background: none;
+      transition:all 0.3s ease;
       .content-icon{
         display: none;
       }
@@ -87,15 +88,28 @@ h1   { font-size: 24px; font-size: 2.4rem; } /* =24px */
         h2{
           font-size: 32px;
           text-transform: uppercase;
+          text-shadow: 1px 1px 1px #000;
         }
         .kc-cta-text{
           font-size: 24px;
+          text-shadow: 1px 1px 1px #000;
         }
       }
-      .content-desc{
-
+      .kc-cta-button{
+        a{
+          background: rgba(255,255,255,0.5);
+          border-radius: 2px;
+          border:2px solid #fff;
+          font-size: 24px;
+          padding:7px 15px;
+          text-shadow: 1px 1px 1px #000;
+          &:hover{
+            text-decoration: none;
+            background: rgba(113,119,191,0.5);
+            border-color: #7177bf;
+          }
+        }
       }
-      .content-button{}
 
     }
   }
@@ -184,8 +198,12 @@ h1   { font-size: 24px; font-size: 2.4rem; } /* =24px */
 }
 
 
-
-
+/*	----------------------------------------------------------------
+  Check my address
+ -------------------------------------------------------------  */
+#video-section{
+  padding: 70px 0;
+}
 
 #video-section .kc-container{
   padding-left: 6px;

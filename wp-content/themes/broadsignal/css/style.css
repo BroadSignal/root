@@ -66,7 +66,7 @@ h1 {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 16px; }
-  .navbar-nav > li a:last-child {
+  .navbar-nav > li:last-child a {
     padding-right: 0; }
 
 .navbar-default .navbar-toggle {
@@ -83,14 +83,28 @@ h1 {
   #intro-section .kc-call-to-action {
     text-align: center;
     /*padding: 220px 0;*/
-    background: none; }
+    background: none;
+    transition: all 0.3s ease; }
     #intro-section .kc-call-to-action .content-icon {
       display: none; }
     #intro-section .kc-call-to-action .kc-cta-desc h2 {
       font-size: 32px;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      text-shadow: 1px 1px 1px #000; }
     #intro-section .kc-call-to-action .kc-cta-desc .kc-cta-text {
-      font-size: 24px; }
+      font-size: 24px;
+      text-shadow: 1px 1px 1px #000; }
+    #intro-section .kc-call-to-action .kc-cta-button a {
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 2px;
+      border: 2px solid #fff;
+      font-size: 24px;
+      padding: 7px 15px;
+      text-shadow: 1px 1px 1px #000; }
+      #intro-section .kc-call-to-action .kc-cta-button a:hover {
+        text-decoration: none;
+        background: rgba(113, 119, 191, 0.5);
+        border-color: #7177bf; }
 
 /*	----------------------------------------------------------------
   Feature Section
@@ -153,6 +167,12 @@ h1 {
     padding: 8px 20px 8px;
     text-transform: uppercase;
     height: 42px; }
+
+/*	----------------------------------------------------------------
+  Check my address
+ -------------------------------------------------------------  */
+#video-section {
+  padding: 70px 0; }
 
 #video-section .kc-container {
   padding-left: 6px;
@@ -250,7 +270,10 @@ img {
       margin-top: 12px; }
 
   .footer-bottom {
-    text-align: center; } }
+    text-align: center; }
+
+  #intro-section {
+    height: 400px; } }
 /**
  * Owl Carousel v2.2.1
  * Copyright 2013-2017 David Deutsch
