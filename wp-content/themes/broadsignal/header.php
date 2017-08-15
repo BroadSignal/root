@@ -38,7 +38,7 @@
 		     </header>-->
 
 
-				 <nav class="navbar navbar-default " role="navigation">
+				 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 
 				 	<div class="container">
 				 		<div class="row">

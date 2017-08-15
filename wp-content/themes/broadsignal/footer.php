@@ -37,7 +37,14 @@
 <div class="footer-bottom">
 <div class="container">
   <div class="row">
-  <div class="col-md-5">
+
+  <?php if ( is_active_sidebar( 'footer-menu' ) ) : ?>
+    <div class="col-md-7 pull-right  col-sm-12">
+        <?php dynamic_sidebar( 'footer-menu' ); ?>
+      </div>
+  <?php endif; ?>
+
+  <div class="col-md-5 pull-left col-sm-12">
   <div class="site-info">
     <?php do_action( 'upbootwp_credits' ); ?>
     &copy; <?php bloginfo('name'); ?> <?php the_time('Y') ?>. All rights reserved
@@ -46,11 +53,6 @@
   </div><!-- .site-info -->
 
 </div>
-  <?php if ( is_active_sidebar( 'footer-menu' ) ) : ?>
-    <div class="col-md-7">
-        <?php dynamic_sidebar( 'footer-menu' ); ?>
-      </div>
-  <?php endif; ?>
 </div></div></div>
 
 

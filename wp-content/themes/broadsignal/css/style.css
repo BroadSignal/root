@@ -14,9 +14,10 @@ body {
   font-weight: 400;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
-  font-size: 1.4rem; }
+  font-size: 1.4rem;
+  /* =14px */
+  padding-top: 90px; }
 
-/* =14px */
 img {
   width: 100%;
   max-width: 100%;
@@ -46,6 +47,15 @@ h1 {
 /*	----------------------------------------------------------------
   Header
  -------------------------------------------------------------  */
+.navbar {
+  -webkit-box-shadow: 0 8px 6px -10px #999;
+  -moz-box-shadow: 0 8px 6px -10px #999;
+  box-shadow: 0 8px 6px -10px #999;
+  /*-webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;*/
+  /* the rest of your styling */ }
+
 .navbar-default {
   border: 0 !important; }
 
@@ -57,11 +67,99 @@ h1 {
   font-weight: 600;
   font-size: 16px; }
 
+.navbar-default .navbar-toggle {
+  border-color: #333; }
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #333 !important; }
+
+/*	----------------------------------------------------------------
+  Intro Banner
+ -------------------------------------------------------------  */
+#intro-section {
+  height: 600px; }
+  #intro-section .kc-call-to-action {
+    text-align: center;
+    /*padding: 220px 0;*/
+    background: none; }
+    #intro-section .kc-call-to-action .content-icon {
+      display: none; }
+    #intro-section .kc-call-to-action .content-title {
+      font-size: 32px;
+      text-transform: uppercase; }
+    #intro-section .kc-call-to-action .content-desc {
+      font-size: 24px; }
+
+/*	----------------------------------------------------------------
+  Feature Section
+ -------------------------------------------------------------  */
+#feature-section {
+  padding: 120px 0;
+  text-align: center; }
+  #feature-section .kc-icon-wrapper {
+    /* width: 150px;
+     height: 150px;
+     border-radius: 122px;
+     background: #ff0000;*/ }
+    #feature-section .kc-icon-wrapper i {
+      font-size: 36px;
+      font-weight: normal;
+      color: #fff;
+      line-height: 110px; }
+    #feature-section .kc-icon-wrapper i::before {
+      display: inline-block;
+      width: 110px;
+      height: 110px;
+      -moz-border-radius: 122px;
+      -webkit-border-radius: 122px;
+      border-radius: 122px;
+      background-color: #d7d7d7; }
+  #feature-section .kc-title-wrap h2 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #7177bf; }
+  #feature-section .kc_text_block p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #7a7a7a; }
+
+/*	----------------------------------------------------------------
+  Check my address
+ -------------------------------------------------------------  */
+#checkaddress {
+  height: 500px; }
+  #checkaddress .kc-title-wrap h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 32px;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 35px; }
+  #checkaddress .kc-raw-code input {
+    border-radius: 0;
+    color: #c0c0c0;
+    font-size: 18px;
+    padding: 8px 10px 8px 20px;
+    height: 42px;
+    border: 0; }
+  #checkaddress .kc-raw-code .input-group-btn button {
+    border-radius: 0;
+    background: #7177bf;
+    color: #fff;
+    font-size: 18px;
+    border: 0;
+    padding: 8px 20px 8px;
+    text-transform: uppercase;
+    height: 42px; }
+
 /*	----------------------------------------------------------------
   Footer
  -------------------------------------------------------------  */
 .footer .footer-top {
   background: #c6c6c6; }
+.footer .site-info {
+  font-size: 14px;
+  color: #889098; }
 .footer .menu {
   float: right; }
   .footer .menu li {
@@ -80,6 +178,23 @@ img {
   width: 100%;
   height: auto; }
 
+@media only screen and (max-width: 768px) {
+  .navbar-default {
+    padding: 15px 0 0 10px; }
+    .navbar-default .navbar-header {
+      padding-bottom: 10px; }
+      .navbar-default .navbar-header .navbar-brand {
+        height: auto;
+        padding-bottom: 5px; }
+    .navbar-default .nav.navbar-nav {
+      width: 100%; }
+    .navbar-default .pull-right {
+      float: none; }
+    .navbar-default .navbar-toggle {
+      margin-top: 12px; }
+
+  .footer-bottom {
+    text-align: center; } }
 /**
  * Owl Carousel v2.2.1
  * Copyright 2013-2017 David Deutsch
