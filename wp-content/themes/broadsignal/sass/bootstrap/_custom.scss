@@ -70,12 +70,16 @@ h1   { font-size: 24px; font-size: 2.4rem; } /* =24px */
 .navbar-default .navbar-toggle .icon-bar{
   background-color: #333!important;
 }
+
+section{
+  transition: all 0.3s ease-in-out;
+}
  /*	----------------------------------------------------------------
    Intro Banner
   -------------------------------------------------------------  */
 
   #intro-section{
-    height: 600px;
+    height: 750px;
     .kc-call-to-action{
       text-align: center;
       /*padding: 220px 0;*/
@@ -153,6 +157,7 @@ h1   { font-size: 24px; font-size: 2.4rem; } /* =24px */
          font-size: 14px;
          font-weight: 400;
          color: #7a7a7a;
+         line-height: 28px;
        }
      }
    }
@@ -161,13 +166,13 @@ h1   { font-size: 24px; font-size: 2.4rem; } /* =24px */
      Check my address
     -------------------------------------------------------------  */
 #checkaddress{
-  height: 500px;
+  height: 620px;
   .kc-title-wrap {
     h2{
       text-align: center;
       text-transform: uppercase;
       font-size: 32px;
-      color: #fff;
+      color: #515769;
       font-weight: 400;
       margin-bottom: 35px;
     }
@@ -179,7 +184,7 @@ h1   { font-size: 24px; font-size: 2.4rem; } /* =24px */
       font-size: 18px;
       padding:8px 10px 8px 20px;
       height: 42px;
-      border: 0;
+      border: 1px solid #cfcece;
 
     }
     .input-group-btn{
@@ -206,8 +211,8 @@ h1   { font-size: 24px; font-size: 2.4rem; } /* =24px */
 }
 
 #video-section .kc-container{
-  padding-left: 6px;
-  padding-right: 6px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 #video-section .iframe{
   width: 100%;

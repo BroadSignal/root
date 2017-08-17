@@ -75,11 +75,14 @@ h1 {
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #333 !important; }
 
+section {
+  transition: all 0.3s ease-in-out; }
+
 /*	----------------------------------------------------------------
   Intro Banner
  -------------------------------------------------------------  */
 #intro-section {
-  height: 600px; }
+  height: 750px; }
   #intro-section .kc-call-to-action {
     text-align: center;
     /*padding: 220px 0;*/
@@ -137,18 +140,19 @@ h1 {
   #feature-section .kc_text_block p {
     font-size: 14px;
     font-weight: 400;
-    color: #7a7a7a; }
+    color: #7a7a7a;
+    line-height: 28px; }
 
 /*	----------------------------------------------------------------
   Check my address
  -------------------------------------------------------------  */
 #checkaddress {
-  height: 500px; }
+  height: 620px; }
   #checkaddress .kc-title-wrap h2 {
     text-align: center;
     text-transform: uppercase;
     font-size: 32px;
-    color: #fff;
+    color: #515769;
     font-weight: 400;
     margin-bottom: 35px; }
   #checkaddress .kc-raw-code input {
@@ -157,7 +161,7 @@ h1 {
     font-size: 18px;
     padding: 8px 10px 8px 20px;
     height: 42px;
-    border: 0; }
+    border: 1px solid #cfcece; }
   #checkaddress .kc-raw-code .input-group-btn button {
     border-radius: 0;
     background: #7177bf;
@@ -175,8 +179,8 @@ h1 {
   padding: 70px 0; }
 
 #video-section .kc-container {
-  padding-left: 6px;
-  padding-right: 6px; }
+  padding-left: 0px;
+  padding-right: 0px; }
 
 #video-section .iframe {
   width: 100%;
@@ -254,6 +258,18 @@ img {
   width: 100%;
   height: auto; }
 
+@media only screen and (max-width: 992px) {
+  #checkaddress {
+    height: 400px; } }
+@media only screen and (min-width: 769px) {
+  .navbar-default .navbar-nav > li.dropdown:hover > a,
+  .navbar-default .navbar-nav > li.dropdown:hover > a:hover,
+  .navbar-default .navbar-nav > li.dropdown:hover > a:focus {
+    background-color: #e7e7e7;
+    color: #555555; }
+
+  li.dropdown:hover > .dropdown-menu {
+    display: block; } }
 @media only screen and (max-width: 768px) {
   .navbar-default {
     padding: 15px 0 0 10px; }
@@ -269,11 +285,14 @@ img {
     .navbar-default .navbar-toggle {
       margin-top: 12px; }
 
+  #checkaddress {
+    height: 400px; }
+
   .footer-bottom {
     text-align: center; }
 
   #intro-section {
-    height: 400px; } }
+    height: 500px; } }
 /**
  * Owl Carousel v2.2.1
  * Copyright 2013-2017 David Deutsch

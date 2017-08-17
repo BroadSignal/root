@@ -13,7 +13,7 @@
     <div class="footer-top">
 <div id="colophon"  class="container" role="contentinfo">
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3 col-xs-4">
       <div class="footer-logo">
       <img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo2.png" class="img-responsive"></div></div>
 
@@ -24,7 +24,7 @@
 					</div>
 		  <?php endif; ?>-->
       <?php if ( is_active_sidebar( 'footer2' ) ) : ?>
-          <div class="col-md-4 pull-right">
+          <div class="col-md-4 pull-right  col-xs-4">
               <?php dynamic_sidebar( 'footer2' ); ?>
             </div>
         <?php endif; ?>
