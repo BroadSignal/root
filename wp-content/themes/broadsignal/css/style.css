@@ -113,7 +113,7 @@ section {
   Feature Section
  -------------------------------------------------------------  */
 #feature-section {
-  padding: 120px 0;
+  padding: 150px 0;
   text-align: center; }
   #feature-section .kc-icon-wrapper {
     /* width: 150px;
@@ -136,7 +136,8 @@ section {
   #feature-section .kc-title-wrap h2 {
     font-size: 24px;
     font-weight: 400;
-    color: #7177bf; }
+    color: #7177bf;
+    margin-top: 30px; }
   #feature-section .kc_text_block p {
     font-size: 14px;
     font-weight: 400;
@@ -149,12 +150,11 @@ section {
 #checkaddress {
   height: 620px; }
   #checkaddress .kc-title-wrap h2 {
-    text-align: center;
-    text-transform: uppercase;
+    margin-bottom: 40px;
     font-size: 32px;
-    color: #515769;
-    font-weight: 400;
-    margin-bottom: 35px; }
+    text-align: center;
+    font-weight: 600;
+    color: #53588f; }
   #checkaddress .kc-raw-code input {
     border-radius: 0;
     color: #c0c0c0;
@@ -176,7 +176,8 @@ section {
   Check my address
  -------------------------------------------------------------  */
 #video-section {
-  padding: 70px 0; }
+  padding: 100px 0;
+  background: rgba(231, 231, 231, 0.6); }
 
 #video-section .kc-container {
   padding-left: 0px;
@@ -205,6 +206,121 @@ section {
 .video-container iframe .ytp-chrome-top,
 .video-container iframe .ytp-pause-overlay ytp-scroll-min {
   display: none !important; }
+
+/*	----------------------------------------------------------------
+  Why Broadsignal
+ -------------------------------------------------------------  */
+#service-list {
+  padding: 100px 0;
+  background: rgba(231, 231, 231, 0.6);
+  text-align: center; }
+  #service-list .kc-icon-wrapper {
+    /* width: 150px;
+     height: 150px;
+     border-radius: 122px;
+     background: #ff0000;*/ }
+    #service-list .kc-icon-wrapper i {
+      font-size: 36px;
+      font-weight: normal;
+      color: #fff;
+      line-height: 110px; }
+    #service-list .kc-icon-wrapper i::before {
+      display: inline-block;
+      width: 110px;
+      height: 110px;
+      -moz-border-radius: 122px;
+      -webkit-border-radius: 122px;
+      border-radius: 122px;
+      background: rgba(83, 88, 143, 0.7); }
+  #service-list .kc-title-wrap h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 30px;
+    text-transform: uppercase;
+    color: #53588f; }
+  #service-list .kc_text_block p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #7a7a7a;
+    line-height: 28px; }
+
+/*	----------------------------------------------------------------
+  NBN Simple
+ -------------------------------------------------------------  */
+#nbnsimple {
+  padding: 100px 0;
+  text-align: center; }
+  #nbnsimple .kc-title-wrap h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 30px;
+    text-transform: uppercase;
+    color: #53588f; }
+
+/*	----------------------------------------------------------------
+  Front page -Product
+ -------------------------------------------------------------  */
+#product {
+  padding: 100px 0;
+  background: rgba(231, 231, 231, 0.6); }
+
+/*	----------------------------------------------------------------
+  broadsignal different
+ -------------------------------------------------------------  */
+#broadsignaldifferent {
+  padding: 100px 0; }
+  #broadsignaldifferent .small-left {
+    width: 50px;
+    float: left;
+    padding: 0; }
+    #broadsignaldifferent .small-left .kc-icon-wrapper {
+      /* width: 150px;
+       height: 150px;
+       border-radius: 122px;
+       background: #ff0000;*/
+      /* i::before{
+         display: inline-block;
+         width: 50px;
+         height: 50px;
+         -moz-border-radius: 122px;
+         -webkit-border-radius: 122px;
+         border-radius: 122px;
+         background: $light-purple;
+       }*/ }
+      #broadsignaldifferent .small-left .kc-icon-wrapper i {
+        font-size: 32px;
+        font-weight: normal;
+        color: #53588f;
+        line-height: 36px; }
+  #broadsignaldifferent .small-right {
+    width: 100%;
+    margin-left: -50px;
+    padding-left: 50px; }
+    #broadsignaldifferent .small-right h3 {
+      margin-top: 10px;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 600;
+      color: #53588f; }
+
+#service-list h2,
+#nbnsimple h2,
+#product h2,
+#broadsignaldifferent h2 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #53588f; }
+
+#service-list p,
+#nbnsimple p,
+#product p,
+#broadsignaldifferent p {
+  margin-bottom: 40px; }
+
+h2 {
+  text-transform: uppercase; }
 
 /*	----------------------------------------------------------------
   Footer

@@ -51,8 +51,15 @@ function upbootwp_setup() {
 add_action( 'after_setup_theme', 'upbootwp_setup' );
 
 /**
- * Register widgetized area and update sidebar with default widgets
+ * To increase upload file size
  */
+ ini_set( ‘upload_max_size’ , ’100MB’ );
+ ini_set( ‘post_max_size’, ’100MB’);
+ ini_set( ‘memory_limit’, ’100MB’ );
+
+ /**
+  * Register widgetized area and update sidebar with default widgets
+  */
 function upbootwp_widgets_init() {
 	register_sidebar(array(
 		'name'          => __('Sidebar','upbootwp'),
