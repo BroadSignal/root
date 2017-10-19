@@ -322,9 +322,11 @@ function kc_process_tab_title( $matches ){
 
 		$tab_atts = shortcode_parse_atts( $matches[0] );
 
-		$title = ''; $adv_title = '';
+		$title = ''; $adv_title = '';$tab_id='';
 		if ( isset( $tab_atts['title'] ) )
 			$title = $tab_atts['title'];
+		if ( isset( $tab_atts['tab_id'] ) )
+			$tab_id = $tab_atts['tab_id'];
 
 		if( isset( $tab_atts['advanced'] ) && $tab_atts['advanced'] === 'yes' ){
 
@@ -361,7 +363,7 @@ function kc_process_tab_title( $matches ){
 					$image = '<img src="'.$image_url.'" alt="" />';
 			}
 
-			$adv_title = str_replace( array( '{title}', '{icon}', '{icon_class}', '{image}', '{image_id}', '{image_url}', '{image_thumbnail}', '{image_medium}', '{image_large}', '{image_full}', '{tab_id}' ), array( $title, $icon, $icon_class, $image, $image_id, $image_url, $image_thumbnail, $image_medium, $image_large, $image_full, $tab_atts['tab_id'] ), $adv_title );
+			$adv_title = str_replace( array( '{title}', '{icon}', '{icon_class}', '{image}', '{image_id}', '{image_url}', '{image_thumbnail}', '{image_medium}', '{image_large}', '{image_full}', '{tab_id}' ), array( $title, $icon, $icon_class, $image, $image_id, $image_url, $image_thumbnail, $image_medium, $image_large, $image_full, $tab_id ), $adv_title );
 
 			echo '<li>'.$adv_title.'</li>';
 

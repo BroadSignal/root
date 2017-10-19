@@ -2,10 +2,10 @@
 $items = $number_item = $words = $show_date = $custom_class = $data_owl = $image_size = $force_image = $socials = $post_type = $image_align = '';
 $layout = $i = 1;
 $size_array = array('full', 'medium', 'large', 'thumbnail');
-
+$show_readmore = true;
+$readmore_text = __('Read more', 'kingcomposer');
 
 extract( $atts );
-
 
 if( $image_align == '')
 	$image_align = 'both';
@@ -184,10 +184,13 @@ $css_class[] = 'kc-image-align-' . $image_align;
 							</div>
 							<?php if ( $words > 0 ): ?>
 								<p><?php echo wp_trim_words( $item->post_content, $words ); ?></p>
-							<?php endif ?>
+							<?php endif;
+							if($show_readmore):
+							?>
 							<a href="<?php echo esc_url( get_permalink( $item->ID ) ); ?>"
-							   class="post-2-button"><?php esc_html_e( 'Read more', 'kingcomposer' ); ?> <i
+							   class="kc-post-2-button"><?php esc_html_e( $readmore_text, 'kingcomposer' ); ?> <i
 									class="fa fa-angle-right" aria-hidden="true"></i></a>
+							<?php endif;?>
 						</div>
 
 					<?php else: ?>
@@ -222,10 +225,13 @@ $css_class[] = 'kc-image-align-' . $image_align;
 							</div>
 							<?php if ( $words > 0 ): ?>
 								<p><?php echo wp_trim_words( $item->post_content, $words ); ?></p>
-							<?php endif ?>
+							<?php endif;
+							if($show_readmore):
+							?>
 							<a href="<?php echo esc_url( get_permalink( $item->ID ) ); ?>"
-							   class="post-2-button"><?php esc_html_e( 'Read more', 'kingcomposer' ); ?> <i
+							   class="kc-post-2-button"><?php esc_html_e( $readmore_text, 'kingcomposer' ); ?> <i
 									class="fa fa-angle-right" aria-hidden="true"></i></a>
+							<?php endif;?>
 						</div>
 						<div class="post-item-right">
 							<figure>
@@ -288,7 +294,7 @@ $css_class[] = 'kc-image-align-' . $image_align;
 							<a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" class="entry-thumb-link">
 								<div class="entry-thumb-wrapper">
 									<img src="<?php echo esc_url( $img_url ); ?>"
-									     alt="<?php echo get_the_title( $post ); ?>"/>
+									     alt="<?php echo strip_tags(get_the_title( $post )); ?>"/>
 									<div class="entry-thumb-overlay"></div>
 								</div>
 							</a>
@@ -321,7 +327,13 @@ $css_class[] = 'kc-image-align-' . $image_align;
 								<div class="entry-excerpt">
 									<p><?php echo wp_trim_words( $post_content, $words ); ?></p>
 								</div>
-							<?php endif ?>
+							<?php endif;
+							if($show_readmore):
+							?>
+							<a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>"
+							   class="kc-post-2-button"><?php esc_html_e( $readmore_text, 'kingcomposer' ); ?> <i
+									class="fa fa-angle-right" aria-hidden="true"></i></a>
+							<?php endif;?>
 						</div>
 					</div>
 				</div>
@@ -451,6 +463,13 @@ $css_class[] = 'kc-image-align-' . $image_align;
 									<?php endif ?>
 								</div>
 							<?php endif ?>
+							<?php 
+							if($show_readmore):
+							?>
+							<a href="<?php echo esc_url( get_permalink( $item->ID ) ); ?>"
+							   class="kc-post-2-button"><?php esc_html_e( $readmore_text, 'kingcomposer' ); ?> <i
+									class="fa fa-angle-right" aria-hidden="true"></i></a>
+							<?php endif;?>
 						</div>
 					</div>
 

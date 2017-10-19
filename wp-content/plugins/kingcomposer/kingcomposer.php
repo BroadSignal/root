@@ -3,7 +3,7 @@
 Plugin Name: KingComposer
 Plugin URI: https://kingcomposer.com/
 Description: KingComposer is the most professional WordPress page builder plugin, it's lightweight and high efficiency to help you build any layout design quickly.
-Version: 2.6.14
+Version: 2.6.15
 Author: King-Theme
 Author URI: http://king-theme.com/
 Text Domain: kingcomposer
@@ -129,6 +129,10 @@ class KingComposer{
 	* KC post_content applied filter the_content. Use to speedup looping post_content
 	*/
 	public $generated = array();
+
+	public $stack_actions = array();
+
+	public $stack_filters = array();
 
 	public function __construct() {
 		// Constants
@@ -329,9 +333,10 @@ class KingComposer{
 		if( is_admin() ) {
 			require_once KC_PATH.'/includes/frontend/helpers/kc.ajax.php';
 		// Front-end only
-		} else {
-			require_once KC_PATH.'/includes/kc.front.php';
 		}
+		
+		require_once KC_PATH.'/includes/kc.front.php';
+
 
 	}
 
@@ -461,14 +466,19 @@ class KingComposer{
 
 		$type_support = array();
 		foreach ($this->param_types as $name => $func) {
-			if (function_exists($func)) {
-
+			$method = method_exists($func[0], $func[1]);
+			if (function_exists($func) || $method) {
 				echo '<script type="text/html" id="tmpl-kc-field-type-'.esc_attr($name).'-template">';
-				$func();
+				if($method)
+					call_user_func($func);
+				else
+					$func();
 				echo "</script>\n";
 				if (!in_array($name, $type_support))
 					array_push ($type_support, $name);
 			}
+			
+			
 		}
 
 		foreach ($this->param_types_cache as $name => $func) {
@@ -988,6 +998,7 @@ class KingComposer{
 			'envato_username' => '',
 			'api_key' => '',
 			'license_key' => '',
+			'instantor' => '',
 			'theme_key' => ''
 
 		), (array)$this->settings );
@@ -1129,7 +1140,7 @@ class KingComposer{
 		if( empty( $str ) )
 			return '';
 
-	    return str_replace( array('<','>','[',']','"','\''), array( ':lt:', ':gt:', ':lsqb:', ':rsqb:', ':quot:', ':apos:' ) );
+	    return str_replace( array('<','>','[',']','"','\''), array( ':lt:', ':gt:', ':lsqb:', ':rsqb:', ':quot:', ':apos:' ), $str );
 	}
 
 	public function unesc( $str ){
@@ -1400,9 +1411,7 @@ class KingComposer{
 		if (count($this->prebuilt_templates) > 0) {
 			array_unshift( $allows_types , 'prebuilt-templates-('.count($this->prebuilt_templates).')' );
 		}
-
-		return $allows_types;
-
+		return $this->apply_filters('kc_allows_types', $allows_types);
 	}
 
 	public function get_sidebars(){
@@ -1454,6 +1463,21 @@ class KingComposer{
 
 	public function register_map_scripts($scripts) {
 		return $scripts+$this->map_scripts;
+	}
+
+
+	public function do_action($tag, $args){
+		//some stuff to checking license
+		do_action($tag, $args);
+	}
+
+	public function apply_filters($tag, $args){
+		//some stuff to checking license
+		return apply_filters($tag, $args);
+	}
+
+	public function default_image(){
+		return $this->apply_filters('kc_default_image', KC_URL.'/assets/images/default.jpg');
 	}
 
 }

@@ -27,7 +27,7 @@ var kc_video_play = ( function($){
 			{
 				if( url === undefined )
 					return false;
-					
+
 				var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
 				return (url.match(p)) ? RegExp.$1 : false;
 			},
@@ -106,7 +106,10 @@ var kc_video_play = ( function($){
 					},
 					events: {
 						onReady: function ( e ) {
-							e.target.mute().setLoop( true );
+							if($obj.data('kc-video-mute') == 'yes')
+								e.target.mute().setLoop( true );
+							if(autoplay)
+								e.target.playVideo();
 							var w = $($obj).find('.ifr_inner').width();
 							$($obj).find('.ifr_inner').height( w/ratio );
 						}
@@ -121,7 +124,7 @@ var kc_video_play = ( function($){
 			{
 				if( url === undefined )
 					return false;
-					
+
 				var regExp = /http(s)?:\/\/(www\.)?vimeo.com\/(\d+)(\/)?(#.*)?/;
 
 				var match = url.match(regExp);

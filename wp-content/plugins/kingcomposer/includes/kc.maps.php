@@ -66,8 +66,10 @@ $kc->add_map(
 						array('property' => 'border-radius', 'label' => 'Border Radius'),
 						array('property' => 'float', 'label' => 'Float'),
 						array('property' => 'display', 'label' => 'Display'),
+						array('property' => 'position', 'label' => 'Position'),
 						array('property' => 'box-shadow', 'label' => 'Box Shadow'),
 						array('property' => 'opacity', 'label' => 'Opacity'),
+						
 					),
 
 					//Custom code css
@@ -309,6 +311,17 @@ $kc->add_map(
 						'description' => __( 'Extra option for video player as modestbranding, loop. Example: modestbranding=1&loop=0', 'kingcomposer' )
 					),
 					array(
+						'name' => 'video_mute',
+						'label' => __( 'Mute Youtube Sound', 'kingcomposer' ),
+						'type' => 'toggle',
+						'value' => 'no',
+						'relation' => array(
+							'parent' => 'video_bg',
+							'show_when' => 'yes'
+						),
+						'description' => __( 'This option allow mute sound of player.', 'kingcomposer' )
+					),
+					array(
 						'name' => 'parallax',
 						'label' => __( 'Parallax', 'kingcomposer' ),
 						'type' => 'select',
@@ -445,6 +458,17 @@ $kc->add_map(
 						'description' => __( 'Extra option for video player as modestbranding, loop. Example: modestbranding=1&loop=0', 'kingcomposer' )
 					),
 					array(
+						'name' => 'video_mute',
+						'label' => __( 'Mute Youtube Sound', 'kingcomposer' ),
+						'type' => 'toggle',
+						'value' => 'no',
+						'relation' => array(
+							'parent' => 'video_bg',
+							'show_when' => 'yes'
+						),
+						'description' => __( 'This option allow mute sound of player.', 'kingcomposer' )
+					),
+					array(
 						'name' => 'row_class',
 						'label' => __( 'Extra classes name', 'kingcomposer' ),
 						'type' => 'text',
@@ -515,6 +539,17 @@ $kc->add_map(
 							'parent' => 'video_bg',
 							'show_when' => 'yes'
 						),
+					),
+					array(
+						'name' => 'video_mute',
+						'label' => __( 'Mute Youtube Sound', 'kingcomposer' ),
+						'type' => 'toggle',
+						'value' => 'no',
+						'relation' => array(
+							'parent' => 'video_bg',
+							'show_when' => 'yes'
+						),
+						'description' => __( 'This option allow mute sound of player.', 'kingcomposer' )
 					),
 				),
 				'styling' => array(
@@ -812,9 +847,7 @@ $kc->add_map(
 								"screens" => "any,1024,999,767,479",
 								'Tab' => array(
 									array('property' => 'font-family,font-size,line-height,font-weight,text-transform,text-align', 'label' => 'Font family', 'selector' => '.kc_tabs_nav, .kc_tabs_nav > li a,+.kc_vertical_tabs>.kc_wrapper>ul.ui-tabs-nav>li>a'),
-
 									array('property' => 'font-size,color,padding', 'label' => 'Icon Size,Icon Color,Icon Spacing', 'selector' => '.kc_tabs_nav a i,+.kc_vertical_tabs>.kc_wrapper>ul.ui-tabs-nav>li>a i'),
-
 									array('property' => 'color', 'label' => 'Text Color', 'selector' => '.kc_tabs_nav a, .kc_tabs_nav,+.kc_vertical_tabs>.kc_wrapper>ul.ui-tabs-nav>li>a'),
 									array('property' => 'background-color', 'label' => 'Background Color', 'selector' => '.kc_tabs_nav,+.kc_vertical_tabs>.kc_wrapper>ul.ui-tabs-nav'),
 									array('property' => 'background-color', 'label' => 'Background Color tab item', 'selector' => '.kc_tabs_nav li,+.kc_vertical_tabs>.kc_wrapper>ul.ui-tabs-nav li'),
@@ -822,6 +855,7 @@ $kc->add_map(
 									array('property' => 'border-radius', 'label' => 'Border-radius', 'selector' => '.kc_tabs_nav > li, .kc_tab.ui-tabs-body-active, .kc_tabs_nav,+.kc_vertical_tabs>.kc_wrapper>ul.ui-tabs-nav>li,+.kc_vertical_tabs>.kc_wrapper>ul.ui-tabs-nav ~ div.kc_tab.ui-tabs-body-active,+.kc_vertical_tabs.tabs_right>.kc_wrapper>ul.ui-tabs-nav ~ div.kc_tab'),
 									array('property' => 'padding', 'label' => 'Padding', 'selector' => '.kc_tabs_nav > li > a,+.kc_vertical_tabs>.kc_wrapper>ul.ui-tabs-nav>li>a'),
 									array('property' => 'margin', 'label' => 'Margin', 'selector' => '.kc_tabs_nav > li > a,+.kc_vertical_tabs>.kc_wrapper>ul.ui-tabs-nav>li'),
+									array('property' => 'width', 'label' => 'Width', 'selector' => '.kc_tabs_nav > li,+.kc_vertical_tabs>.kc_wrapper>ul.ui-tabs-nav>li'),
 								),
 
 								'Tab Hover' => array(
@@ -1335,6 +1369,7 @@ $kc->add_map(
 								'Image Style' => array(
 									array('property' => 'text-align', 'label' => 'Image Alignment'),
 									array('property' => 'display', 'label' => 'Image Display'),
+									array('property' => 'float', 'label' => 'Image Float'),
 									array('property' => 'background-color', 'label' => 'Background Color', 'selector' => 'img'),
 									array('property' => 'box-shadow', 'label' => 'Box Shadow', 'selector' => 'img'),
 									array('property' => 'border', 'label' => 'Border', 'selector' => 'img'),
@@ -1343,7 +1378,7 @@ $kc->add_map(
 									array('property' => 'height', 'label' => 'Height', 'selector' => 'img'),
 									array('property' => 'max-width', 'label' => 'Max Width', 'selector' => 'img'),
 									array('property' => 'vertical-align', 'label' => 'Vertical Align', 'selector' => 'img'),
-									array('property' => 'margin', 'label' => 'Margin', 'selector' => 'img'),
+									array('property' => 'margin', 'label' => 'Margin', 'selector' => ''),
 									array('property' => 'padding', 'label' => 'Padding', 'selector' => 'img')
 								),
 								'Caption' => array(
@@ -1442,7 +1477,9 @@ $kc->add_map(
 									array('property' => 'line-height', 'label' => 'Line Height', 'selector' => 'i'),
                                     array('property' => 'text-align', 'label' => 'Icon Alignment'),
 									array('property' => 'display', 'label' => 'Display', 'selector' => 'i'),
-									array('property' => 'width', 'label' => 'Width', 'selector' => 'i'),
+									array('property' => 'float', 'label' => 'Float', 'selector' => 'i'),
+									array('property' => 'float', 'label' => 'Float', 'selector' => 'i'),
+									array('property' => 'position', 'label' => 'Position', 'selector' => ''),
 									array('property' => 'height', 'label' => 'Height', 'selector' => 'i'),
 									array('property' => 'border', 'label' => 'Icon Border', 'selector' => 'i'),
 									array('property' => 'border-radius', 'label' => 'Border Radius', 'selector' => 'i'),
@@ -2881,6 +2918,17 @@ $kc->add_map(
 						)
 					),
 					array(
+						'name' => 'video_mute',
+						'label' => __( 'Mute Youtube Sound', 'kingcomposer' ),
+						'type' => 'toggle',
+						'value' => 'no',
+						'relation' => array(
+							'parent' => 'source',
+							'show_when' => 'youtube'
+						),
+						'description' => __( 'This option allow mute sound of player.', 'kingcomposer' )
+					),
+					array(
 						'type' 			=> 'toggle',
 						'name' 			=> 'full_width',
 						'label' 		=> __( 'Video Fullwidth', 'kingcomposer' ),
@@ -3890,7 +3938,7 @@ $kc->add_map(
 									array('property' => 'padding', 'label' => 'Padding', 'selector' => 'img')
 								),
 								'Overlay Effect' => array(
-									array('property' => 'background-color', 'label' => 'Overlay Background Color', 'selector' => '.kc-image-overlay'),
+									array('property' => 'background-color', 'label' => 'Overlay Background Color', 'selector' => '.kc_image_gallery .item-grid .kc-image-overlay'),
 									array('property' => 'background-color', 'label' => 'Icon BG Color', 'selector' => '.kc-image-overlay i'),
 									array('property' => 'color', 'label' => 'Icon Color', 'selector' => '.kc-image-overlay i'),
 									array('property' => 'font-size', 'label' => 'Icon Size', 'selector' => '.kc-image-overlay i'),
@@ -6347,6 +6395,24 @@ $kc->add_map(
 						'label'			=> __( 'Force Featured Image', 'kingcomposer' ),
 						'value'			=> 'no',
 						'description'	=> __(' Auto get first image on post as featured image when post does not have it.', 'kingcomposer')
+					),
+					array(
+						'type'			=> 'toggle',
+						'name'			=> 'show_readmore',
+						'label'			=> __( 'Show Readmore', 'kingcomposer' ),
+						'value'			=> 'yes',
+						'description'	=> __('Display read more link.', 'kingcomposer')
+					),
+					array(
+						'type'			=> 'text',
+						'label'			=> __( 'Read more text', 'kingcomposer' ),
+						'name'			=> 'readmore_text',
+						'value'			=> __('Read more', 'kingcomposer'),
+						'relation'    => array(
+							'parent'    => 'show_readmore',
+							'show_when' => array('yes')
+						),
+						'description'	=> __( 'The label of read more button. Default : Read more', 'kingcomposer' )
 					),
 					array(
 						'type'		=> 'select',

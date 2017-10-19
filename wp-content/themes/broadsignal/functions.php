@@ -51,15 +51,8 @@ function upbootwp_setup() {
 add_action( 'after_setup_theme', 'upbootwp_setup' );
 
 /**
- * To increase upload file size
+ * Register widgetized area and update sidebar with default widgets
  */
- ini_set( ‘upload_max_size’ , ’100MB’ );
- ini_set( ‘post_max_size’, ’100MB’);
- ini_set( ‘memory_limit’, ’100MB’ );
-
- /**
-  * Register widgetized area and update sidebar with default widgets
-  */
 function upbootwp_widgets_init() {
 	register_sidebar(array(
 		'name'          => __('Sidebar','upbootwp'),
@@ -252,4 +245,51 @@ function upbootwp_breadcrumbs() {
 		echo '</ol>';
 
 	}
+}
+
+
+
+/***************
+
+Woocommerce 
+**************/
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
+
+function my_theme_wrapper_start() {
+  echo '<section id="main">';
+}
+
+function my_theme_wrapper_end() {
+  echo '</section>';
+}
+
+
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
+
+
+
+/*********
+Woocommerce composite product
+************/
+
+/* Display 4 column */
+add_filter( 'woocommerce_composite_component_loop_columns', 'wc_cp_component_loop_columns', 10, 3 );
+function wc_cp_component_loop_columns( $cols, $component_id, $composite ) {
+	$cols = 4;
+	return $cols;
+}
+
+/* Display total number in product page */
+add_filter( 'woocommerce_component_options_per_page', 'wc_cp_component_options_per_page', 10, 3 );
+function wc_cp_component_options_per_page( $results_count, $component_id, $composite ) {
+	$results_count = 12;
+	return $results_count;
 }

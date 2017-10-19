@@ -332,6 +332,8 @@ function kc_admin_header(){
 	global $kc;
 
 	$meta = $kc->get_post_meta();
+	$settings = $kc->settings();
+	
 	/*
 	*	The builder is active, force the wp editor to tinyMCE
 	*	To load faster tinyMCE in the builder
@@ -386,6 +388,7 @@ function kc_admin_header(){
 		kc_fonts_update = function( datas){ kc.ui.fonts_callback( datas ); },
 		kc_fonts = <?php echo json_encode( get_option('kc-fonts') ); ?>,
 		kc_action = '<?php echo $kc->action; ?>',
+		kc_instantor = <?php echo (isset($settings['instantor']) && $settings['instantor'] == 'disabled')? 'false' : 'true';?>,
 		kc_allows_types = <?php echo json_encode($kc->get_support_content_types()); ?>,
 		kc_ignored_types = <?php echo json_encode($kc->get_ignored_section_content_types()); ?>;
 
@@ -771,6 +774,8 @@ function kc_content_row_actions ($actions, $post) {
 			}
 
 	}
+	
+	$actions = $kc->apply_filters('kc_topbar_links', $actions);
 
     return $actions;
 
@@ -860,14 +865,15 @@ function kc_get_attachment_image_src ($image = '', $id = '', $size = 'full', $ic
 			delete_transient('kc_attach_xml_'.$id);
 		}
 	}
-
-	return array(
-		KC_URL.'/assets/images/get_start.jpg',
-		2000,
-		1000,
-		''
-	);
-
+	
+	if(is_admin()){
+		return array(
+			KC_URL.'/assets/images/get_start.jpg',
+			2000,
+			1000,
+			''
+		);
+	}
 }
 
 add_action ('all_admin_notices', 'kc_notices_hub', 999);

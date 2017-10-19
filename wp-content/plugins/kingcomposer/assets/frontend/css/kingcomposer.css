@@ -103,7 +103,8 @@ div.kc_col-of-5 {
 }
 
 .kc_single_image img {
-    max-width: 100%
+    max-width: 100%;
+    display: block;
 }
 
 .kc-video-bg .kc_column {
@@ -3290,17 +3291,17 @@ body div.dark_rounded .pp_nav .pp_play, body div.ppt {
     color: #000
 }
 
-.kc-blog-posts-2 .kc-list-item-2 .post-2-button {
+.kc-blog-posts .kc-post-2-button {
     float: left;
     padding: 10px 20px;
     border: 1px solid #ddd;
     border-radius: 2px;
     color: #000;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1
 }
 
-.kc-blog-posts-2 .kc-list-item-2 .post-2-button:hover {
+.kc-blog-posts .kc-post-2-button:hover {
     border-color: #42BCE2;
     background: #42BCE2;
     color: #fff

@@ -168,7 +168,7 @@ class kc_tools {
 		return $_terms;
 
 	}
-	
+
 	public static function get_featured_image( $post, $thumbnail = 'single-post-thumbnail' , $first = true ) {
 
 		$featured = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $thumbnail );
@@ -176,12 +176,12 @@ class kc_tools {
 		if( empty($featured) )
 		{
 			if( $first == true )return self::get_first_image( $post->post_content, $post->ID );
-			else return KC_URL.'/assets/images/default.jpg';
+			else return $kc->default_image();
 		}
 		return $featured[0];
 
 	}
-	
+
 	public static function images_attached( $id ){
 
 		$args = array(
@@ -206,7 +206,7 @@ class kc_tools {
 	}
 
 	public static function get_first_image( $content, $id = null ) {
-
+		global $kc;
 		$first_img = self::get_first_video( $content );
 
 		if( $first_img != null ){
@@ -225,7 +225,7 @@ class kc_tools {
 			if( !empty( $first[0] ) )
 				return $first[0][0];
 
-			else $first_img = KC_URL.'/assets/images/default.jpg';
+			else $first_img = $kc->default_image();
 		}
 
 		return $first_img;
@@ -245,16 +245,16 @@ class kc_tools {
 		return 	$first_video;
 
 	}
-	
+
 	public static function createImageSize( $source, $attr ){
-		
+
 		if (strpos($source, KC_SITE) === false || $source == KC_URL.'/assets/images/get_start.jpg')
 			return $source;
-		
+
 		$attr = explode( 'x', $attr ); $arg = array();
-		
+
 		if ( !empty( $attr[2] ) ) {
-			
+
 			$arg['w'] = $attr[0];
 			$arg['h'] = $attr[1];
 			$arg['a'] = $attr[2];
@@ -264,7 +264,7 @@ class kc_tools {
 			}else{
 				$attr = '-'.$attr[0].'x'.$attr[1].'xc';
 			}
-			
+
 		}else if( !empty( $attr[0] ) && !empty( $attr[1] ) ){
 			$arg['w'] = $attr[0];
 			$arg['h'] = $attr[1];
@@ -272,32 +272,32 @@ class kc_tools {
 		}else{
 			return $source;
 		}
-		
+
 		$source = strrev( $source );
 		$st = strpos( $source, '.');
-		
+
 		if( strpos( $source, strrev( 'images/default.jpg' ) ) === 0 ){
 			return strrev( $source );
 		}else if( $st === false ){
 			return strrev( $source ).$attr;
 		}else{
-			
+
 			$file = str_replace( array( untrailingslashit( site_url() ).'/', '\\', '/' ), array( ABSPATH, KDS, KDS ), strrev( $source ) );
-			
+
 			$_return = strrev( substr( $source, 0, $st+1 ).strrev($attr).substr( $source, $st+1 ) );
 			$__return = str_replace( array( untrailingslashit( site_url() ).'/', '\\', '/' ), array( ABSPATH, KDS, KDS ), $_return );
-	
+
 			if( file_exists( $file ) && !file_exists( $__return ) ){
 				ob_start();
 				self::processImage( $file, $arg, $__return );
 				ob_end_clean();
 			}
-			
+
 			return $_return;
-			
+
 		}
 	}
-	
+
 	public static function processImage( $localImage, $params = array(), $tempfile ){
 
 		$sData = getimagesize($localImage);
@@ -505,7 +505,7 @@ class kc_tools {
 		}
 
 		$imgType = "";
-		
+
 		if(preg_match('/^image\/(?:jpg|jpeg)$/i', $mimeType)){
 			$imgType = 'jpg';
 			imagejpeg($canvas, $tempfile, 70);
@@ -600,7 +600,7 @@ class kc_tools {
 		if( $atts['amount'] == 0 ){
 			$atts['items'] = -1;
 		}
-		
+
 
 		//assign category for work shortcode
 		if($atts['tax_term'] !=''){

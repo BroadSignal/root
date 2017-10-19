@@ -1653,9 +1653,11 @@
 
 					kc.ui.over_delay = true;
 
-					var atts = $(this).data('atts'), handle, okGo = false;
+					var atts = $(this).data('atts'), 
+						handle, 
+						okGo = false;
 
-					if( atts.handle !== '' && atts.handle !== undefined ){
+					if (atts !== undefined && atts.handle !== '' && atts.handle !== undefined) {
 
 						handle = $( this ).find( atts.handle );
 
@@ -1689,7 +1691,7 @@
 				        e.dataTransfer.endEffect = 'none';*/
 				        
 				        if( e.dataTransfer !== undefined && typeof  e.dataTransfer.setData == 'function' )
-				        	e.dataTransfer.setData('text/plain', 'KingComposer.Com');
+				        	e.dataTransfer.setData('text/plain', '');
 
 					    if (typeof atts.helper == 'object' 
 					    		&& e.dataTransfer !== undefined 

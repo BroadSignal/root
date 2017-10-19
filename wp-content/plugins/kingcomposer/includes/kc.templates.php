@@ -562,7 +562,7 @@ $kc = KingComposer::globe();
 		</a>
 		<a class="kc-add-new-section" href="<?php echo admin_url('/post-new.php?kc_action=enable_builder&post_type='); ?>{{kc.sections.type}}" target=_blank>
 			<i class="sl-plus func add-new" title="<?php _e('Add new section', 'kingcomposer'); ?>"></i>
-			<span><?php _e('Save to new ', 'kingcomposer'); ?>{{kc.sections.type}}</span>
+			<span><?php _e('Save to new section', 'kingcomposer'); ?></span>
 		</a>
 		<# } #>
 		<i class="sl-reload func reload" title="<?php _e('Reload', 'kingcomposer'); ?>"></i>

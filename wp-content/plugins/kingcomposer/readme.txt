@@ -157,6 +157,16 @@ Do you have questions or issues with KingComposer? Use these support channels ap
 7. screenshot-7.jpg
 
 == Changelog ==
+= 2.6.15 (Sep 16, 2017) =
+* [Fix] Content disappeared on Chrome 6.1.
+* [Fix] Error loading icon on some hosting
+* [Fix] Popup menu on TinyMCE
+* [Fix] Conflict with Easy Download 
+* [Fix] Link wrapper on Image Gallery
+* [Fix] Other bugs
+* [Improve] Add setting to disable inline text editor on Live mode.
+* [Improve] Add read more setting for Blog Post element
+
 = 2.6.14 (Jun 16, 2017) =
 * [Fix] Conflict shortcode render with WordPress 4.8
 * [Fix] Column wrapper display

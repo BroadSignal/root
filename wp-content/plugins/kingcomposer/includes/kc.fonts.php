@@ -104,7 +104,9 @@ $count = count($kc_fonts);
 		<div id="kc-ggf-pagination-bottom" class="kc-ggf-pagination"></div>
 	</div>
 	<div id="kc-ggf-footer">
-		<?php _e('Powered by Google - Development by KingComposer Team', 'kingcomposer'); ?>.
+		<?php 
+		global $kc;
+		echo $kc->apply_filters('kc_font_powered_by',__('Powered by Google - Development by KingComposer Team', 'kingcomposer')); ?>.
 	</div>
 </div>
 <div id="kc-fonts-manager-resource"></div>

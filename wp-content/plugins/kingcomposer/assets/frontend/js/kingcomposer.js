@@ -58,7 +58,7 @@ var kc_front = ( function($){
 
         this.checkElements = function(){
             // Set some vars to check with
-            var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html'),
+            var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? window : 'html'),
                 viewportTop = $(scrollElem).scrollTop(),
                 viewportBottom = (viewportTop + windowHeight);
 
@@ -199,7 +199,7 @@ var kc_front = ( function($){
 
                 if(typeof kc_clfw === 'undefined')
                     return;
-                
+
                 rect = kc_clfw.getBoundingClientRect();
 
 				el.style.left = (-rect.left) + 'px';
@@ -505,7 +505,9 @@ var kc_front = ( function($){
 					playerVars: playerVars,
 					events: {
 						onReady: function ( e ) {
-							e.target.mute().setLoop( true );
+							if($obj.data('kc-video-mute') == 'yes')
+								e.target.mute().setLoop( true );
+							e.target.playVideo();
 						}
 					}
 				} );
